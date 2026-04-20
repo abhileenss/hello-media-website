@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello Media — Hello, Stop, Smile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <!-- H Icon SVG -->
+        <svg class="logo-icon" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Red pixel -->
+          <rect x="28" y="0" width="10" height="10" fill="#E6062F"/>
+          <!-- Left vertical bar -->
+          <rect x="0" y="10" width="10" height="55" fill="#000"/>
+          <!-- Right vertical bar -->
+          <rect x="50" y="10" width="10" height="55" fill="#000"/>
+          <!-- Top crossbar (pause bars) -->
+          <rect x="0" y="24" width="60" height="10" fill="#000"/>
+          <!-- Smile curve (curved crossbar) — using path -->
+          <path d="M10 36 Q30 56 50 36" stroke="#000" stroke-width="10" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">HELLO<br><span class="logo-media">MEDIA</span></span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#who-we-are" class="nav-link">WHO WE ARE</a></li>
+        <li><a href="#what-we-do" class="nav-link">WHAT WE DO</a></li>
+        <li><a href="#whom-we-love" class="nav-link">WHOM WE LOVE</a></li>
+        <li><a href="#how-we-do-it" class="nav-link">HOW WE DO IT</a></li>
+        <li><a href="#where-we-are" class="nav-link">WHERE WE ARE</a></li>
+        <li><a href="tel:+971000000000" class="nav-phone" aria-label="Call us">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       HERO SECTION — "WELCOM TO OUR HOME"
+  ═══════════════════════════════════════════ -->
+  <section id="hero" class="section section-hero">
+    <div class="hero-image-wrap">
+      <img src="assets/images/hero.jpg" alt="Marketing: Shockingly complex" class="hero-bg-img" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="pixel-accent pixel-accent--hero"></div>
+      <h1 class="hero-title">WELCOM<br>TO OUR HOME</h1>
+      <p class="hero-subtitle">Marketing: Shockingly complex!<br>Let the experts handle the volts</p>
+    </div>
+    <a href="#who-we-are" class="scroll-arrow" aria-label="Scroll down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="32" height="32"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WHO WE ARE
+  ═══════════════════════════════════════════ -->
+  <section id="who-we-are" class="section">
+
+    <!-- 1. About -->
+    <div class="content-block content-block--right-text">
+      <div class="block-image">
+        <img src="assets/images/who-we-are.jpg" alt="Who We Are" />
+      </div>
+      <div class="block-text">
+        <div class="section-label">
+          <div class="label-ribbon">
+            <svg class="label-logo" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="28" y="0" width="10" height="10" fill="#fff"/>
+              <rect x="0" y="10" width="10" height="55" fill="#fff"/>
+              <rect x="50" y="10" width="10" height="55" fill="#fff"/>
+              <rect x="0" y="24" width="60" height="10" fill="#fff"/>
+              <path d="M10 36 Q30 56 50 36" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span>HELLO MEDIA</span>
+          </div>
+        </div>
+        <h2 class="block-heading">WHO WE<br>ARE</h2>
+        <p class="block-body">We're the superheroes of storytelling crafting epic narratives that captivate hearts and minds! We're the brainy wizards behind the curtain making magic happen for your brand.</p>
+      </div>
+    </div>
+
+    <!-- 2. Vision -->
+    <div class="content-block content-block--left-text">
+      <div class="block-text">
+        <div class="section-label">
+          <div class="label-ribbon">
+            <svg class="label-logo" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="28" y="0" width="10" height="10" fill="#fff"/>
+              <rect x="0" y="10" width="10" height="55" fill="#fff"/>
+              <rect x="50" y="10" width="10" height="55" fill="#fff"/>
+              <rect x="0" y="24" width="60" height="10" fill="#fff"/>
+              <path d="M10 36 Q30 56 50 36" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span>HELLO MEDIA</span>
+          </div>
+        </div>
+        <h2 class="block-heading">OUR<br>VISION</h2>
+        <p class="block-body">Our vision is to redefine Marketing through relentless innovation. We strive to deliver "One More" ingenious solution, "One More" remarkable campaign, and "One More" leap in success, setting a new standard for the Industry.</p>
+      </div>
+      <div class="block-image">
+        <img src="assets/images/vision.jpg" alt="Our Vision" />
+      </div>
+    </div>
+
+    <!-- 3. Mission -->
+    <div class="content-block content-block--right-text">
+      <div class="block-image">
+        <img src="assets/images/mission.jpg" alt="Our Mission" />
+      </div>
+      <div class="block-text">
+        <div class="section-label">
+          <div class="label-ribbon">
+            <svg class="label-logo" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="28" y="0" width="10" height="10" fill="#fff"/>
+              <rect x="0" y="10" width="10" height="55" fill="#fff"/>
+              <rect x="50" y="10" width="10" height="55" fill="#fff"/>
+              <rect x="0" y="24" width="60" height="10" fill="#fff"/>
+              <path d="M10 36 Q30 56 50 36" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span>HELLO MEDIA</span>
+          </div>
+        </div>
+        <h2 class="block-heading">OUR<br>MISSION</h2>
+        <p class="block-body">We push beyond the expected, going the extra mile in creativity, shaping smarter strategies, and delivering exceptional campaigns. Our purpose is simple: to help our clients create their next great success story.</p>
+      </div>
+    </div>
+
+    <!-- 4. Team -->
+    <div class="content-block content-block--left-text">
+      <div class="block-text">
+        <div class="section-label">
+          <div class="label-ribbon">
+            <svg class="label-logo" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="28" y="0" width="10" height="10" fill="#fff"/>
+              <rect x="0" y="10" width="10" height="55" fill="#fff"/>
+              <rect x="50" y="10" width="10" height="55" fill="#fff"/>
+              <rect x="0" y="24" width="60" height="10" fill="#fff"/>
+              <path d="M10 36 Q30 56 50 36" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span>HELLO MEDIA</span>
+          </div>
+        </div>
+        <h2 class="block-heading">OUR<br>TEAM</h2>
+        <p class="block-body">At our quirky creative haven, our team is a bunch of misfit geniuses who believe that thinking outside the box is too mainstream — so we invented a new box altogether. From copywriting wizards to social media gurus who turn hashtags into high art.</p>
+        <p class="block-subline">COFFEE? NAH WE FUEL OUR TEAM WITH PURE ADRENALINE AND EXCITEMENT — THEY'RE LIKE PERPETUAL MOTION MACHINES!</p>
+      </div>
+      <div class="block-image">
+        <img src="assets/images/our-team.jpg" alt="Our Team" />
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WHAT WE DO — HELLO GROUP
+  ═══════════════════════════════════════════ -->
+  <section id="what-we-do" class="section section-services">
+    <div class="section-header">
+      <div class="pixel-accent pixel-accent--section"></div>
+      <h2 class="section-title">WHAT<br>WE DO</h2>
+      <p class="section-desc">A 360° marketing agency with six specialized divisions — one single point of contact, consistent branding across every channel.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Strategy -->
+      <div class="service-card">
+        <svg class="service-logo" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="28" y="0" width="10" height="10" fill="#2E7D32"/>
+          <rect x="0" y="10" width="10" height="55" fill="#000"/>
+          <rect x="50" y="10" width="10" height="55" fill="#000"/>
+          <rect x="0" y="24" width="60" height="10" fill="#000"/>
+          <path d="M10 36 Q30 56 50 36" stroke="#000" stroke-width="10" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h3>Strategy</h3>
+        <p>Data-driven brand strategies that clarify your position and build a roadmap to dominate your market.</p>
+      </div>
+
+      <!-- Creative -->
+      <div class="service-card">
+        <svg class="service-logo" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="28" y="0" width="10" height="10" fill="#B8860B"/>
+          <rect x="0" y="10" width="10" height="55" fill="#000"/>
+          <rect x="50" y="10" width="10" height="55" fill="#000"/>
+          <rect x="0" y="24" width="60" height="10" fill="#000"/>
+          <path d="M10 36 Q30 56 50 36" stroke="#000" stroke-width="10" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h3>Creative</h3>
+        <p>Bold visual identities, campaigns, and content that stop people mid-scroll and make them feel something.</p>
+      </div>
+
+      <!-- Digital -->
+      <div class="service-card">
+        <svg class="service-logo" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="28" y="0" width="10" height="10" fill="#1565C0"/>
+          <rect x="0" y="10" width="10" height="55" fill="#000"/>
+          <rect x="50" y="10" width="10" height="55" fill="#000"/>
+          <rect x="0" y="24" width="60" height="10" fill="#000"/>
+          <path d="M10 36 Q30 56 50 36" stroke="#000" stroke-width="10" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h3>Digital</h3>
+        <p>SEO, paid media, social media management, and performance marketing that deliver measurable ROI.</p>
+      </div>
+
+      <!-- Production -->
+      <div class="service-card">
+        <svg class="service-logo" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="28" y="0" width="10" height="10" fill="#616161"/>
+          <rect x="0" y="10" width="10" height="55" fill="#000"/>
+          <rect x="50" y="10" width="10" height="55" fill="#000"/>
+          <rect x="0" y="24" width="60" height="10" fill="#000"/>
+          <path d="M10 36 Q30 56 50 36" stroke="#000" stroke-width="10" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h3>Production</h3>
+        <p>End-to-end creative production — print, outdoor, events, and activations that bring your brand to life.</p>
+      </div>
+
+      <!-- Audio & Video -->
+      <div class="service-card">
+        <svg class="service-logo" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="28" y="0" width="10" height="10" fill="#4FC3F7"/>
+          <rect x="0" y="10" width="10" height="55" fill="#000"/>
+          <rect x="50" y="10" width="10" height="55" fill="#000"/>
+          <rect x="0" y="24" width="60" height="10" fill="#000"/>
+          <path d="M10 36 Q30 56 50 36" stroke="#000" stroke-width="10" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h3>Audio &amp; Video</h3>
+        <p>Film, animation, podcasts, and branded content that tell your story in the most compelling format.</p>
+      </div>
+
+      <!-- PR -->
+      <div class="service-card">
+        <svg class="service-logo" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="28" y="0" width="10" height="10" fill="#1A237E"/>
+          <rect x="0" y="10" width="10" height="55" fill="#000"/>
+          <rect x="50" y="10" width="10" height="55" fill="#000"/>
+          <rect x="0" y="24" width="60" height="10" fill="#000"/>
+          <path d="M10 36 Q30 56 50 36" stroke="#000" stroke-width="10" fill="none" stroke-linecap="round"/>
+        </svg>
+        <h3>PR</h3>
+        <p>Media relations, influencer partnerships, and reputation management to earn attention, not just buy it.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WHOM WE LOVE
+  ═══════════════════════════════════════════ -->
+  <section id="whom-we-love" class="section section-love">
+    <div class="section-header section-header--white">
+      <div class="pixel-accent pixel-accent--white"></div>
+      <h2 class="section-title section-title--white">WHOM<br>WE LOVE</h2>
+      <p class="section-desc section-desc--white">We partner with brands bold enough to think differently — and smart enough to know when to stop and listen.</p>
+    </div>
+
+    <div class="love-grid">
+      <div class="love-card">
+        <div class="love-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="#E6062F" stroke-width="2.5" width="40" height="40"><rect x="5" y="10" width="30" height="22" rx="2"/><path d="M13 10V8a7 7 0 0114 0v2"/></svg>
+        </div>
+        <h3>Corporate &amp;<br>Enterprise</h3>
+        <p>Large organisations that demand strategic depth, governance, and international-standard thinking.</p>
+      </div>
+      <div class="love-card">
+        <div class="love-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="#E6062F" stroke-width="2.5" width="40" height="40"><path d="M5 30V14l15-9 15 9v16"/><rect x="14" y="20" width="12" height="10"/></svg>
+        </div>
+        <h3>Big Retail</h3>
+        <p>Multi-location brands needing consistent creative, seasonal campaigns, and performance at scale.</p>
+      </div>
+      <div class="love-card">
+        <div class="love-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="#E6062F" stroke-width="2.5" width="40" height="40"><path d="M8 12h24v18H8z"/><path d="M4 12l16-8 16 8"/><path d="M16 30v-8h8v8"/></svg>
+        </div>
+        <h3>Hospitality</h3>
+        <p>Hotels, restaurants, and lifestyle brands that need their story told with warmth, elegance, and precision.</p>
+      </div>
+      <div class="love-card">
+        <div class="love-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="#E6062F" stroke-width="2.5" width="40" height="40"><path d="M20 5l3.5 7 7.5 1-5.5 5.5 1.5 7.5L20 23l-7 3 1.5-7.5L9 13l7.5-1z"/></svg>
+        </div>
+        <h3>Startups</h3>
+        <p>Ambitious founders who need a brand identity and go-to-market strategy built to compete from day one.</p>
+      </div>
+      <div class="love-card">
+        <div class="love-icon">
+          <svg viewBox="0 0 40 40" fill="none" stroke="#E6062F" stroke-width="2.5" width="40" height="40"><path d="M20 4l16 8v8c0 8-7 15-16 18C11 35 4 28 4 20v-8z"/></svg>
+        </div>
+        <h3>Government &amp;<br>Public Sector</h3>
+        <p>Entities that require trust, clarity, compliance, and communication that resonates with diverse audiences.</p>
+      </div>
+    </div>
+
+    <!-- CEO Quote -->
+    <div class="ceo-quote">
+      <div class="quote-pixel"></div>
+      <blockquote>
+        "MARKETING IS NOT ABOUT BEING LOUDER THAN OTHERS, BUT ABOUT BEING CLEARER IN PURPOSE AND STRONGER IN VALUE."
+      </blockquote>
+      <cite>RANA AHSAN<br><span>HELLO MEDIA CEO</span></cite>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       HOW WE DO IT — HELLO, STOP, SMILE
+  ═══════════════════════════════════════════ -->
+  <section id="how-we-do-it" class="section section-how">
+    <div class="section-header">
+      <div class="pixel-accent pixel-accent--section"></div>
+      <h2 class="section-title">HOW WE<br>DO IT</h2>
+    </div>
+
+    <div class="philosophy-tagline">HELLO <span class="dot">›</span> STOP <span class="dot">›</span> SMILE</div>
+    <p class="philosophy-intro">This is not a slogan. It's a working philosophy.</p>
+
+    <div class="philosophy-grid">
+      <div class="philosophy-card">
+        <div class="philosophy-number">01</div>
+        <h3>HELLO</h3>
+        <p>Start with listening — to our client, to the market, to the competitors. Every strong brand relationship starts with a conversation.</p>
+        <div class="philosophy-pixel" style="background:#E6062F"></div>
+      </div>
+      <div class="philosophy-card">
+        <div class="philosophy-number">02</div>
+        <h3>STOP</h3>
+        <p>Stop and think strategically. Come up with unique ideas. In a world obsessed with speed, Hello Media chooses clarity first.</p>
+        <div class="philosophy-pixel" style="background:#E6062F"></div>
+      </div>
+      <div class="philosophy-card">
+        <div class="philosophy-number">03</div>
+        <h3>SMILE</h3>
+        <p>Deliver something people love — that touches emotions and moves them. We don't just make brands visible. We make them likable.</p>
+        <div class="philosophy-pixel" style="background:#E6062F"></div>
+      </div>
+    </div>
+
+    <div class="brand-pillars">
+      <h3 class="pillars-title">HELLO MEDIA IS:</h3>
+      <ul class="pillars-list">
+        <li><span class="pillar-bullet"></span>Creative-first</li>
+        <li><span class="pillar-bullet"></span>Results-driven</li>
+        <li><span class="pillar-bullet"></span>Human-centered</li>
+        <li><span class="pillar-bullet"></span>Strategically disciplined</li>
+        <li><span class="pillar-bullet"></span>Digitally sharp</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       WHERE WE ARE
+  ═══════════════════════════════════════════ -->
+  <section id="where-we-are" class="section section-where">
+    <div class="where-image-wrap">
+      <img src="assets/images/world-map.jpg" alt="Where We Are" class="where-bg-img" />
+      <div class="where-overlay"></div>
+    </div>
+    <div class="where-content">
+      <h2 class="where-title">WHERE<br>WE ARE</h2>
+      <p class="where-subtitle">BRINGING THE WORLD CLOSER ONE CONNECTION AT A TIME —<br>BECAUSE EVEN SATELLITES ENVY OUR NETWORKING SKILLS!</p>
+      <p class="where-statement">HELLO MEDIA is proudly headquartered in the <strong>UAE</strong>, serving the region with a global creative and intelligence network across <strong>Europe, the Americas, Asia, and the Middle East</strong>. Our clients benefit from international thinking — without losing local focus.</p>
+      <div class="where-tagline">UAE IS OUR HOME. GLOBAL IS OUR ADVANTAGE.</div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+
+      <!-- Logo -->
+      <div class="footer-logo-wrap">
+        <svg class="footer-logo-icon" viewBox="0 0 60 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="28" y="0" width="10" height="10" fill="#E6062F"/>
+          <rect x="0" y="10" width="10" height="55" fill="#fff"/>
+          <rect x="50" y="10" width="10" height="55" fill="#fff"/>
+          <rect x="0" y="24" width="60" height="10" fill="#fff"/>
+          <path d="M10 36 Q30 56 50 36" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="footer-brand">HELLO<br>MEDIA</div>
+          <div class="footer-tagline">HELLO , STOP , SMILE</div>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="footer-links">
+        <div class="footer-col">
+          <a href="#">Site Map</a>
+          <a href="#">Careers</a>
+          <a href="#">FAQ</a>
+        </div>
+        <div class="footer-col">
+          <a href="#">Cookie Statement</a>
+          <a href="#">Where we are</a>
+          <a href="#">Media Center</a>
+        </div>
+        <div class="footer-col">
+          <a href="#">Terms &amp; Condition</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Copyright</a>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright &copy; 2012–2024 Hello Media. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
