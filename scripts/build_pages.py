@@ -5,9 +5,13 @@ Emits fully-rendered .html files with shared nav, footer, logo intro.
 """
 from pathlib import Path
 from textwrap import dedent
+import time
 
 ROOT = Path(__file__).resolve().parent.parent
 IMG = "/assets/images/hero"  # path written into HTML
+# Cache-buster: bump automatically at build time so browsers always
+# refetch CSS and JS when we redeploy.
+VER = time.strftime("%Y%m%d%H%M")
 
 # ─── Logo SVG (animatable parts) ──────────────────────────────
 LOGO_SVG = '''<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -118,7 +122,7 @@ def page_shell(title, description, body, extra_head="", extra_scripts="", og_ima
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/style.css?v={VER}">
 {extra_head}
 </head>
 <body>
@@ -131,7 +135,7 @@ def page_shell(title, description, body, extra_head="", extra_scripts="", og_ima
 {body}
 </main>
 {footer()}
-<script src="/js/main.js"></script>
+<script src="/js/main.js?v={VER}"></script>
 {extra_scripts}
 </body>
 </html>
@@ -406,7 +410,7 @@ def build_where_we_are():
     cs = coming_soon("Contact form coming soon", "We're wiring this up to our inbox. In the meantime, hover a pin on the map for hub details.")
     return page_shell("Where we are", "Hello Media global network: hubs and studios.",
                       header + map_html + cs,
-                      extra_scripts='<script src="/js/map.js"></script>')
+                      extra_scripts=f'<script src="/js/map.js?v={VER}"></script>')
 
 # ─── STUB PAGES — each with its own voice so the footer
 #     doesn't read as mass copy-paste
