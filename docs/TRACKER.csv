@@ -52,7 +52,7 @@ Add social media icons in hero / nav,Design,Done,P2,Web Dev,,2026-04-22,Inline-S
 Mock award images (Manag. with awards / events) for Awards page,Design,Needed,P2,Graphics,,,,Look like generic media / marketing awards
 Brochure design (PDF + web version),Design,Needed,P2,Graphics,,,,Chaadi asked — was missing from tracker
 Office address — UAE (HQ),Content,Needed,P1,Management,,,,
-Office addresses — UK / USA / Brazil / China / Egypt (luxury locations — mock OK for now),Content,Needed,P2,Web Dev + Management,,,,Use Sheikh Zayed Rd-equivalent in each city; placeholder OK
+Office addresses — UK / USA / Brazil / China / Egypt (luxury locations — mock OK for now),Content,Done,P2,Web Dev + Management,,2026-04-22,"Indicative placeholders live on country pages — Central London / Midtown Manhattan / Av. Paulista, SP / The Bund, Shanghai / Smart Village, Cairo",Swap for real addresses when Management confirms
 Studio addresses — India / Pakistan,Content,Needed,P2,Management,,,,
 Phone numbers per country (real or mock),Content,Needed,P2,Management,,,,
 Contact email destination,Ops,Needed,P1,Management,,,,For form + footer
@@ -84,7 +84,7 @@ Social account: LinkedIn — individual pages collected,Marketing,Needed,P2,Each
 Source privacy policy text from a media / marketing reference,Legal,Needed,P1,Management,,,,Chaadi suggestion: take + AI-modify for UAE laws
 Source T&C text from same reference,Legal,Needed,P1,Management,,,,
 Cookie statement text (link only — no popup),Legal,Needed,P2,Legal,,,,Chaadi: no GDPR popup — just a footer link
-Add 'no claim / sue' clause to T&C,Legal,Needed,P2,Legal,,,,Chaadi: entering site = agreement
+Add 'no claim / sue' clause to T&C,Legal,In Progress,P2,Legal,,,Scaffold clause wired into /terms/ stub ('by using this site you agree … no claim for reliance'),Legal still owns final wording + sign-off
 Copyright statement,Legal,Needed,P2,Legal,,,,
 Cookie consent banner — confirmed NOT NEEDED,Legal,Done,P2,Legal,,,Confirmed by Chaadi,No popup; link in T&C is enough
 Contact form on /where-we-are/,Engineering,To Do,P1,Web Dev,,,Form backend choice needed first,
