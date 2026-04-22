@@ -6,6 +6,10 @@
 (function () {
   'use strict';
 
+  // Mark JS as ready so reveal styles apply. Without this, content
+  // stays visible for no-JS / script-blocked users.
+  document.documentElement.classList.add('js-ready');
+
   // ───── Intro overlay ───────────────────────────
   const intro = document.querySelector('.intro-overlay');
   if (intro) {
@@ -57,7 +61,7 @@
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px 10% 0px' });
     targets.forEach((t) => io.observe(t));
   } else {
     targets.forEach((t) => t.classList.add('is-in'));

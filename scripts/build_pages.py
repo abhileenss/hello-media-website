@@ -94,8 +94,13 @@ def footer():
   </div>
 </footer>'''
 
-def page_shell(title, description, body, extra_head="", extra_scripts=""):
-    full_title = title if title.lower().startswith("hello media") else f"{title} — Hello Media"
+def page_shell(title, description, body, extra_head="", extra_scripts="", og_image="/assets/images/hero/home.jpg"):
+    if title.strip().lower() == "hello media":
+        full_title = "Hello Media — Creative marketing agency, UAE + global"
+    elif title.lower().startswith("hello media"):
+        full_title = title
+    else:
+        full_title = f"{title} — Hello Media"
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -103,6 +108,13 @@ def page_shell(title, description, body, extra_head="", extra_scripts=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{full_title}</title>
 <meta name="description" content="{description}">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="{full_title}">
+<meta property="og:description" content="{description}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{og_image}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -110,11 +122,12 @@ def page_shell(title, description, body, extra_head="", extra_scripts=""):
 {extra_head}
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="intro-overlay" aria-hidden="true">
   <div class="intro-logo" style="color:#fff">{LOGO_SVG}</div>
 </div>
 {nav()}
-<main>
+<main id="main">
 {body}
 </main>
 {footer()}
@@ -125,14 +138,16 @@ def page_shell(title, description, body, extra_head="", extra_scripts=""):
 '''
 
 # ─── Reusable layout partials ─────────────────────────
-def block(title, body, img, eyebrow, href=None, reverse=False, dark=False):
+def block(title, body, img, eyebrow, href=None, reverse=False, dark=False, alt=None, priority=False):
     cls = "block" + (" block--reverse" if reverse else "")
     link_html = f'<a class="block__link" href="{href}">Explore →</a>' if href else ""
+    img_alt = alt if alt is not None else f"{title} — Hello Media"
+    load_attrs = 'fetchpriority="high"' if priority else 'loading="lazy" decoding="async"'
     return f'''<section class="{cls}" data-reveal>
   <div class="block__media">
     <picture>
       <source srcset="{IMG}/{img}.webp" type="image/webp">
-      <img src="{IMG}/{img}.jpg" alt="" loading="lazy">
+      <img src="{IMG}/{img}.jpg" alt="{img_alt}" {load_attrs}>
     </picture>
   </div>
   <div class="block__copy">
@@ -143,7 +158,8 @@ def block(title, body, img, eyebrow, href=None, reverse=False, dark=False):
   </div>
 </section>'''
 
-def page_header(eyebrow, title, lead, img):
+def page_header(eyebrow, title, lead, img, alt=None):
+    img_alt = alt if alt is not None else f"{title} — Hello Media"
     return f'''<header class="page-header" data-reveal>
   <span class="eyebrow">{eyebrow}</span>
   <h1>{title}</h1>
@@ -152,7 +168,7 @@ def page_header(eyebrow, title, lead, img):
 <div class="page-hero-image" data-reveal>
   <picture>
     <source srcset="{IMG}/{img}.webp" type="image/webp">
-    <img src="{IMG}/{img}.jpg" alt="">
+    <img src="{IMG}/{img}.jpg" alt="{img_alt}" fetchpriority="high">
   </picture>
 </div>'''
 
@@ -205,7 +221,7 @@ def build_home():
   <div class="hero__media">
     <picture>
       <source srcset="{IMG}/home.webp" type="image/webp">
-      <img src="{IMG}/home.jpg" alt="Hello Media — marketing agency">
+      <img src="{IMG}/home.jpg" alt="Hello Media — creative marketing agency, UAE &amp; global" fetchpriority="high">
     </picture>
   </div>
   <div class="hero__panel">
@@ -219,7 +235,8 @@ def build_home():
     who = block(
         "Who we are",
         "We're the superheroes of storytelling — crafting epic narratives that captivate hearts and minds. And the brainy wizards behind the curtain, making magic happen for your brand.",
-        "who-we-are", "About us", href="/who-we-are/")
+        "who-we-are", "About us", href="/who-we-are/",
+        alt="The Hello Media team in studio", priority=True)
 
     what = block(
         "What we do",
@@ -391,30 +408,101 @@ def build_where_we_are():
                       header + map_html + cs,
                       extra_scripts='<script src="/js/map.js"></script>')
 
-# ─── SIMPLE COMING-SOON STUBS ────────────────────────
+# ─── STUB PAGES — each with its own voice so the footer
+#     doesn't read as mass copy-paste
+#     Fields: (slug, title, eyebrow, lead, img, soon_title, soon_body)
 STUBS = [
-    ("what-we-did",        "What we did",        "Case studies",  "Warning: viewing these case studies may lead to uncontrollable outbursts of WOW.", "what-we-did"),
-    ("when-we-are-needed", "When we are needed", "How we help",   "When challenges show up, we throw them a party and turn them into opportunities.", "when-needed"),
-    ("awards",             "Awards",             "Brags",         "The trophy cabinet is being built. For now, imagine it tastefully lit.", "awards"),
-    ("media-center",       "Media Center",       "Press",         "Where stories get tangled, untangled, and sometimes mangled.", "media-center"),
-    ("faq",                "FAQ",                "Help",          "Why do we have an FAQ? Because we heard you have more questions than a curious cat. Meowntain your curiosity here.", "faq"),
-    ("csr-community",      "CSR — Community",    "Giving back",   "Why did the corporation cross the road? To get to the community on the other side.", "csr-community"),
-    ("csr-environment",    "CSR — Environment",  "Our planet",    "If businesses were superheroes, CSR would be their sidekick fighting for a greener planet.", "csr-environment"),
-    ("small-jobs",         "Small jobs",         "Quick help",    "Got a tiny creative brief? We do those too. Details coming soon.", "small-jobs"),
-    ("suggestions",        "Suggestions & complaints", "Tell us", "Got a suggestion or complaint? We're all ears (well, figuratively).", "suggestions"),
-    ("site-map",           "Site map",           "Navigate",      "Like GPS for your clicking fingers — say goodbye to digital detours.", "site-map"),
-    ("privacy",            "Privacy policy",     "Legal",         "Where we promise to guard it like a hungry dragon guards a sandwich.", "privacy"),
-    ("terms",              "Terms & conditions", "Legal",         "Our T&C: like a treasure hunt, but with fewer pirates and more legal stuff. Fun to read! (No, seriously.)", "terms"),
-    ("cookies",            "Cookie statement",   "Legal",         "The digital snacks that help us serve you better (no crumbs, we promise).", "cookies"),
-    ("copyright",          "Copyright",          "Legal",         "Because our content is as original as an elephant doing the Heimlich manoeuvre.", "copyright"),
+    ("what-we-did", "What we did", "Case studies",
+     "Proof, not promises — a look at the work behind the words.",
+     "what-we-did",
+     "Case studies launching soon",
+     "Our first three case studies are being written. Expect the full playbook: brief, craft, numbers, the good and the unexpected."),
+
+    ("when-we-are-needed", "When we are needed", "How we help",
+     "Launches, pivots, bad weeks, good weeks — the moments where marketing stops being a checkbox.",
+     "when-needed",
+     "Detailed scenarios coming soon",
+     "We're putting together scenario pages — product launches, reputation management, rebrands and the in-between moments."),
+
+    ("awards", "Awards", "Recognition",
+     "We don't chase trophies, but when our clients' work earns them, we're proud to list them here.",
+     "awards",
+     "Trophy cabinet under construction",
+     "We're pulling together the shortlist of wins — by client, by year, by craft. Live once verified with our partners."),
+
+    ("media-center", "Media Center", "Press",
+     "Press mentions, interviews, and the stories we've been part of.",
+     "media-center",
+     "Press room opening soon",
+     "We're compiling press coverage, spokesperson bios, and logo kits. If you're a journalist needing something now, reach out directly."),
+
+    ("faq", "FAQ", "Help",
+     "The questions we hear most from new clients — answered honestly.",
+     "faq",
+     "FAQ being populated",
+     "We're writing answers to the most common client questions: scope, timelines, pricing bands, how we work across countries. Check back soon."),
+
+    ("csr-community", "CSR — Community", "Giving back",
+     "Where we operate, we participate — local causes, pro-bono work and partnerships.",
+     "csr-community",
+     "Community initiatives launching soon",
+     "We're documenting the partnerships, volunteer hours, and pro-bono engagements across our network. Honest numbers, not vanity."),
+
+    ("csr-environment", "CSR — Environment", "Our planet",
+     "A creative agency isn't carbon-free — we measure, reduce and report what we can.",
+     "csr-environment",
+     "Our environmental commitments coming soon",
+     "Baseline measurements and reduction targets are being drafted. We'd rather publish real numbers than a green-washed statement."),
+
+    ("small-jobs", "Small jobs", "Quick help",
+     "Not every brief needs a retainer. A new logo, a one-off campaign, a deck that needs dressing — those too.",
+     "small-jobs",
+     "Small-jobs pricing coming soon",
+     "We're finalising the package, turnaround windows and pricing tiers for small jobs. Until then, drop us a note and we'll quote directly."),
+
+    ("suggestions", "Suggestions & complaints", "Tell us",
+     "Feedback loops only work when both sides show up. Tell us what we got right, and where we missed.",
+     "suggestions",
+     "Feedback form coming soon",
+     "We're wiring up a form that routes to the right person based on the type of feedback. Until then, please email us directly."),
+
+    ("site-map", "Site map", "Navigate",
+     "Every page on the site, in one place.",
+     "site-map",
+     "", ""),  # site-map has its own body builder; stub not used
+
+    ("privacy", "Privacy policy", "Legal",
+     "How we collect, use and protect your data when you visit this site or work with us.",
+     "privacy",
+     "Policy awaiting legal review",
+     "Our privacy policy is being finalised with counsel for UAE PDPL, UK/EU GDPR and US compliance. The live version will land here before any form collects data."),
+
+    ("terms", "Terms & conditions", "Legal",
+     "The rules of engagement — what you can expect from us, what we expect from you.",
+     "terms",
+     "T&Cs awaiting legal review",
+     "Our terms of service and engagement terms are with counsel. We'll publish the consolidated version here on sign-off."),
+
+    ("cookies", "Cookie statement", "Legal",
+     "What cookies this site uses, why, and how to turn them off.",
+     "cookies",
+     "Cookie policy awaiting review",
+     "Until this site collects anything beyond anonymous analytics, we're keeping it minimal. The full statement will publish once analytics is wired."),
+
+    ("copyright", "Copyright", "Legal",
+     "Content, imagery and brand marks on this site — what's ours, what's licensed, what's yours.",
+     "copyright",
+     "Copyright notice being finalised",
+     "We're documenting attributions for every third-party asset. Until that's complete, assume everything here is © Hello Media unless noted otherwise."),
 ]
 
 def build_stubs():
     out = {}
-    for slug, title, eyebrow, lead, img in STUBS:
+    for slug, title, eyebrow, lead, img, soon_title, soon_body in STUBS:
+        if slug == "site-map":
+            continue  # custom builder
         body = page_header(eyebrow, title, lead, img)
-        body += coming_soon(title + " coming soon",
-                            "This page is being polished. In the meantime, enjoy the brand mood above.")
+        body += coming_soon(soon_title, soon_body)
         out[slug] = page_shell(title, lead, body)
     return out
 

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found — Hello Media</title>
+<meta name="description" content="This page took a wrong turn. Let's get you back on track.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .nf {
+    min-height: calc(100vh - var(--nav-h));
+    background: var(--black);
+    color: var(--white);
+    display: grid;
+    place-items: center;
+    padding: 4rem var(--gutter);
+    text-align: center;
+  }
+  .nf__pixel {
+    width: 22px; height: 22px;
+    background: var(--red);
+    margin: 0 auto 2rem;
+    animation: pixel-blink 1.4s var(--pause) infinite;
+  }
+  .nf__code {
+    font-family: var(--font-caps);
+    font-size: 0.8rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.25rem;
+  }
+  .nf h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+  }
+  .nf p {
+    color: rgba(255,255,255,0.7);
+    max-width: 52ch;
+    margin: 0 auto 2rem;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .nf__actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .nf__btn {
+    font-family: var(--font-caps);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 0.9rem 1.4rem;
+    border: 2px solid var(--red);
+    color: var(--white);
+    transition: background 0.25s var(--ease), color 0.25s var(--ease);
+  }
+  .nf__btn:hover { background: var(--red); }
+  .nf__btn--ghost { border-color: rgba(255,255,255,0.3); }
+  .nf__btn--ghost:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="/">
+      <span style="color:#fff">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="76" y="4" width="14" height="14" fill="#E6062F"/>
+          <rect x="12" y="22" width="66" height="10" fill="currentColor"/>
+          <rect x="12" y="32" width="10" height="56" fill="currentColor"/>
+          <rect x="68" y="32" width="10" height="56" fill="currentColor"/>
+          <path d="M22 58 Q45 82 68 58" stroke="currentColor" stroke-width="10" fill="none"/>
+        </svg>
+      </span>
+      <span class="nav__brand-text">Hello<br>Media</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a class="nav__link" href="/who-we-are/">Who we are</a>
+      <a class="nav__link" href="/what-we-do/">What we do</a>
+      <a class="nav__link" href="/whom-we-love/">Whom we love</a>
+      <a class="nav__link" href="/where-we-are/">Where we are</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="nf">
+  <div>
+    <div class="nf__pixel" aria-hidden="true"></div>
+    <div class="nf__code">Error 404</div>
+    <h1>This page took<br>a wrong turn</h1>
+    <p>The link you followed is broken, or the page has moved. It happens. Pick a door below and we'll get you back into the good stuff.</p>
+    <div class="nf__actions">
+      <a class="nf__btn" href="/">Back to home</a>
+      <a class="nf__btn nf__btn--ghost" href="/site-map/">Site map</a>
+    </div>
+  </div>
+</main>
+<script src="/js/main.js"></script>
+</body>
+</html>
