@@ -1,119 +1,125 @@
-Task,Area,Status,Owner,Priority,Blocker,Notes
-Brand CSS tokens (colors / fonts / motion),Design,Done,Claude,P1,,"Black / white / #E6062F; Archivo Black + Barlow Condensed + Inter; pause / smile / wink easings"
-Animated logo SVG with intro overlay,Design,Done,Claude,P1,,Five animatable parts (pause / H-left / H-right / smile / pixel); plays once per session
-Image-dominant hero layout,Design,Done,Claude,P1,,Fixes Chaadi's half-image feedback — full-bleed image with text panel bottom-left
-Page header + block layout components,Design,Done,Claude,P1,,Shared across 43 pages
-Mobile nav with hamburger,Design,Done,Claude,P2,,"Collapses under 860px; iOS bleed fix shipped in commit 8639fc5"
-Scroll reveal with motion language,Design,Done,Claude,P2,,Honours prefers-reduced-motion
-Accessibility focus styles,Design,Done,Claude,P2,,Keyboard focus-visible outline in brand red
-iOS 100vh / 100svh fix on hero,Engineering,Done,Claude,P1,,Progressive enhancement so Safari's dynamic toolbar doesn't push content
-Full responsive audit (phone / tablet / desktop),Design,Done,Claude,P1,,"Breakpoints at 400 / 600 / 860 px with per-breakpoint tuning"
-Optimise 49 hero images (WebP + JPG),Engineering,Done,Claude,P1,,852 MB source → 24.5 MB output
-Python page generator (scripts/build_pages.py),Engineering,Done,Claude,P1,,Shared nav / footer / logo template
-Interactive world map with pin tooltips,Engineering,Done,Claude,P1,,6 hubs pulsing + 2 studios grey
-Branded 404 page,Engineering,Done,Claude,P2,,Replaces Vercel default
-Favicon SVG,Engineering,Done,Claude,P2,,Simple logomark
-Skip-to-content link,Engineering,Done,Claude,P2,,
-Reveal-flash bug fix,Engineering,Done,Claude,P1,,html.js-ready gating + relaxed IntersectionObserver
-Fetchpriority on above-fold images,Engineering,Done,Claude,P2,,Fixes /whom-we-love/ delay
-Lazy loading on below-fold images,Engineering,Done,Claude,P2,,
-Local crawl script (43 pages / 131 refs),Engineering,Done,Claude,P3,,0 broken links / assets / orphans
-OpenGraph + Twitter meta per page,SEO,Done,Claude,P2,,
-Proper homepage title with positioning,SEO,Done,Claude,P2,,Hello Media — Creative marketing agency UAE + global
-Theme-color meta tag,SEO,Done,Claude,P3,,Matches brand black
-Security headers (CSP / HSTS / XFO / Referrer-Policy),Security,Done,Claude,P2,,via vercel.json
-Permissions-Policy (no camera / mic / geo / FLoC),Security,Done,Claude,P3,,via vercel.json
-Cache-Control: immutable on /assets/,Performance,Done,Claude,P3,,1 year
-Cache-Control: 1h on /css and /js,Performance,Done,Claude,P3,,must-revalidate
-Alt text on all images,Accessibility,Done,Claude,P2,,
-Differentiated stub copy per page,Content,Done,Claude,P2,,Each of 14 stubs has its own wording — footer no longer looks copy-pasted
-Site map page with full link index,Content,Done,Claude,P3,,
-Partner brief doc (docs/PARTNER-BRIEF.md),Content,Done,Claude,P2,,
-Tracker CSV (docs/TRACKER.csv),Content,Done,Claude,P2,,This file
-Contact form on /where-we-are/,Engineering,To Do,Claude,P1,Form backend + destination email,Currently coming-soon block
-sitemap.xml,SEO,To Do,Claude,P2,Final domain,Needed once domain is locked
-robots.txt,SEO,To Do,Claude,P2,Final domain,
-Analytics snippet,Engineering,To Do,Claude,P2,Provider choice,
-Schema.org JSON-LD (Organization + LocalBusiness),SEO,To Do,Claude,P2,Addresses + domain,
-manifest.webmanifest + PNG icons (180 / 192 / 512),Engineering,To Do,Claude,P3,,For iOS + Android home-screen
-Swap in licensed brand fonts,Design,To Do,Claude,P2,Font files from Chaadi,Currently closest-free substitutes
-Replace stand-in logo with pixel-perfect vector,Design,To Do,Claude,P2,Clean SVG export from Logo.ai,
-Populate client logos on Whom we love,Content,To Do,Claude,P1,Client logo files,Blocks unhiding in primary nav
-Case study template + 3 launch stories,Content,To Do,Claude,P1,Case study content,Blocks unhiding in primary nav
-Wire real addresses into map tooltips,Engineering,To Do,Claude,P1,Per-country addresses,Currently mock text
-Country pages (UAE / UK / USA / Brazil / China / Egypt),Engineering,To Do,Claude,P2,Per-country content,Hero images already optimised
-Legal page: populate Privacy,Legal,To Do,Legal,P1,Privacy policy text,
-Legal page: populate Terms,Legal,To Do,Legal,P1,T&C text,
-Legal page: populate Cookies,Legal,To Do,Legal,P2,Cookie statement text,
-Legal page: populate Copyright,Legal,To Do,Legal,P2,Copyright statement,
-FAQ: populate Q&A,Content,To Do,Claude,P2,Q&A list,
-Team page: build layout + populate,Content,To Do,Claude,P1,Photos + bios,
-Awards page: populate,Content,To Do,Claude,P2,Awards list,
-Social media icons in footer,Content,To Do,Claude,P2,Active handles,
-Longer-form copy: E-Marketing service page,Content,To Do,Claude,P3,Body copy beyond tagline,
-Longer-form copy: Web Solutions service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Mobile App Dev service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: AI service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: SEO service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Web App service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Domain & Hosting service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Branding service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Creative & Printing service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Video Production service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Audio Production service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Copywriting service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: PR service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Photography & Media Buy page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Packaging service page,Content,To Do,Claude,P3,Body copy,
-Longer-form copy: Crisis Management service page,Content,To Do,Claude,P3,Body copy,
-Arabic version / hreflang,Engineering,To Do,Claude,P3,Go / no-go from client,Defer unless launch requires
-Cookie consent banner,Engineering,To Do,Claude,P2,Legal guidance,Depends on GDPR / UAE PDPL
-Clean SVG of logomark (no wordmark),Design,Needed,Chaadi,P1,,Single file, black + red
-Clean SVG of wordmark (HELLO MEDIA),Design,Needed,Chaadi,P1,,Single file
-Font licence decision,Design,Needed,Chaadi,P2,,Provide Geometr415 + EngraversGothic files OR approve current substitutes
-Brand red hex + Pantone confirmation,Design,Needed,Chaadi,P3,,Currently using #E6062F from Logo.jpg
-Sign-off on homepage hero layout,Design,Needed,Chaadi,P1,,Full-bleed image, text panel bottom-left
-Sign-off on intro overlay animation,Design,Needed,Chaadi,P1,,Pause → Smile → Pixel assembly
-Sign-off on motion language (pause / smile / wink),Design,Needed,Chaadi,P2,,
-Image crop guidance per page,Design,Needed,Chaadi,P3,,Focal points for 16:8 hero crops
-Final domain,Ops,Needed,Client,P1,,Probably hellomedia.ae — needed for sitemap / OG / DNS
-Contact email destination,Ops,Needed,Client,P1,,For form + footer
-Office address: UAE (HQ),Content,Needed,Client,P1,,For map tooltip + contact page
-Office address: United Kingdom,Content,Needed,Client,P1,,
-Office address: United States,Content,Needed,Client,P1,,
-Office address: Brazil,Content,Needed,Client,P1,,
-Office address: China,Content,Needed,Client,P1,,
-Office address: Egypt,Content,Needed,Client,P1,,
-Studio address: India,Content,Needed,Client,P2,,
-Studio address: Pakistan,Content,Needed,Client,P2,,
-Phone numbers per country,Content,Needed,Client,P2,,One number per hub / studio
-Client logos (6–12 files),Content,Needed,Client,P1,,SVG or high-res PNG; used on Whom we love
-Case study 1 — launch story,Content,Needed,Client,P1,,Title + hero image + copy + 2–3 outcome numbers
-Case study 2 — launch story,Content,Needed,Client,P1,,Same structure
-Case study 3 — launch story,Content,Needed,Client,P1,,Same structure
-Team: leadership photos + bios,Content,Needed,Client,P1,,Name + title + short bio + headshot
-Team: department leads photos + bios,Content,Needed,Client,P2,,Optional for v2; can launch with leadership only
-Awards list (title / year / category),Content,Needed,Client,P2,,Optional badge images
-FAQ — 8 to 12 Q&A pairs,Content,Needed,Client,P2,,
-Small-jobs offering (scope / pricing / turnaround),Content,Needed,Client,P2,,
-LinkedIn handle,Content,Needed,Client,P2,,
-Instagram handle,Content,Needed,Client,P2,,
-X / Twitter handle,Content,Needed,Client,P3,,
-YouTube handle,Content,Needed,Client,P3,,
-Hero subline sign-off,Content,Needed,Client,P1,,Pick A / B / C or write your own — see partner brief
-Nav decision: hide Whom-we-love + What-we-did until content ships,Content,Needed,Client,P1,,Vote from Claude: hide from primary nav, keep in footer
-Copy sign-off on home + all hubs,Content,Needed,Client,P2,,Confirm voice / typo fixes
-Optional brand intro video for hero,Content,Needed,Client,P3,,15–20s muted autoplay loop
-Privacy policy text,Legal,Needed,Legal,P1,,Final wording for publication
-Terms & conditions text,Legal,Needed,Legal,P1,,Final wording
-Cookie statement text,Legal,Needed,Legal,P2,,
-Copyright statement,Legal,Needed,Legal,P2,,
-Cookie consent banner requirement,Legal,Needed,Legal,P2,,GDPR / UAE PDPL confirmation
-Data residency requirements,Legal,Needed,Legal,P3,,Analytics + form submissions
-Disable Vercel Deploy Protection,Ops,Needed,Ops,P1,,Blocks end-to-end deploy verification
-Analytics provider choice,Ops,Needed,Ops,P2,,GA4 / Plausible / Vercel Analytics
-Form backend choice,Ops,Needed,Ops,P1,,Formspree / Resend / Vercel Forms / SMTP
-DNS cutover to Vercel,Ops,Needed,Ops,P1,,Once domain confirmed
-Monitoring / uptime setup,Ops,Needed,Ops,P3,,
-PR workflow confirmation,Ops,Needed,Ops,P3,,Feature branch → PR → review → merge
-Code review policy,Ops,Needed,Ops,P3,,Who reviews design / content / engineering changes
+Action,Area,Status,Priority,Person Responsible,Start Date,End Date,Result,Remarks
+Brand CSS tokens (colors / fonts / motion),Design,Done,P1,Web Dev,,,Live in css/style.css,"Black / white / #E6062F; Archivo Black + Barlow Condensed + Inter; pause / smile / wink easings"
+Animated logo SVG with intro overlay,Design,Done,P1,Web Dev,,,Live,Five animatable parts; plays once per session
+Image-dominant hero layout,Design,Done,P1,Web Dev,,,Live,Fixes Chaadi's half-image feedback
+Page header + block layout components,Design,Done,P1,Web Dev,,,Live,Shared across 43 pages
+Mobile nav with hamburger,Design,Done,P2,Web Dev,,,Live,iOS bleed fix shipped in commit 1f13085
+Scroll reveal motion language,Design,Done,P2,Web Dev,,,Live,Honours prefers-reduced-motion
+Accessibility focus styles,Design,Done,P2,Web Dev,,,Live,Keyboard focus-visible outline in brand red
+iOS 100vh / 100svh fix on hero,Engineering,Done,P1,Web Dev,,,Live,Progressive enhancement
+Full responsive audit (phone / tablet / desktop),Design,Done,P1,Web Dev,,,Live,Breakpoints at 400 / 600 / 860 px
+Optimise 49 hero images (WebP + JPG),Engineering,Done,P1,Web Dev,,,Live,852 MB → 24.5 MB
+Python page generator,Engineering,Done,P1,Web Dev,,,Live,Single source for all 43 pages
+Interactive world map with pin tooltips,Engineering,Done,P1,Web Dev,,,Live,6 hubs + 2 studios
+Branded 404 page,Engineering,Done,P2,Web Dev,,,Live,
+Favicon SVG,Engineering,Done,P2,Web Dev,,,Live,
+Skip-to-content link,Engineering,Done,P2,Web Dev,,,Live,
+Reveal-flash bug fix,Engineering,Done,P1,Web Dev,,,Live,html.js-ready gating
+Fetchpriority on above-fold images,Engineering,Done,P2,Web Dev,,,Live,
+Lazy loading on below-fold images,Engineering,Done,P2,Web Dev,,,Live,
+Local crawl script (43 pages / 131 refs),Engineering,Done,P3,Web Dev,,,Live,0 broken links
+OpenGraph + Twitter meta per page,SEO,Done,P2,Web Dev,,,Live,
+Proper homepage title with positioning,SEO,Done,P2,Web Dev,,,Live,
+Theme-color meta tag,SEO,Done,P3,Web Dev,,,Live,
+Security headers (CSP / HSTS / XFO / Referrer-Policy),Security,Done,P2,Web Dev,,,Live,via vercel.json
+Permissions-Policy (camera / mic / geo / FLoC),Security,Done,P3,Web Dev,,,Live,via vercel.json
+Cache-bust ?v= on CSS / JS,Engineering,Done,P2,Web Dev,,,Live,Auto-stamped on every build
+Alt text on all images,Accessibility,Done,P2,Web Dev,,,Live,
+Differentiated stub copy per page,Content,Done,P2,Web Dev,,,Live,Footer no longer reads as copy-paste
+Site map page with full link index,Content,Done,P3,Web Dev,,,Live,
+Partner brief doc (PARTNER-BRIEF.md),Content,Done,P2,Web Dev,,,Live in docs/,
+Tracker CSV (this file),Content,Done,P2,Web Dev,,,Live in docs/,
+"Brand guideline — final approval (gate for everything)",Brand,Needed,P1,Management,,,,Chaadi: this is step 1
+Move all approved brand files to a shared Google Drive (employee-only),Brand,Needed,P1,Management,,,,Chaadi recommendation
+Vercel project — transfer ownership to Hello Media,Ops,Needed,P1,Management,,,,Currently under personal account; move to Hello Media org
+Disable Vercel Deploy Protection,Ops,Needed,P1,Tech,,,,Blocks public preview review
+Final domain choice,Ops,Needed,P1,Management,,,,"Chaadi vote: hellomedia.site (.com / .net taken; .ae alone reads too local)"
+DNS cutover to Vercel once domain is final,Ops,Needed,P1,Tech,,,,
+Form backend choice,Ops,Needed,P1,Tech,,,,Tech recommends — Formspree / Resend / Vercel Forms / SMTP
+Analytics provider choice,Ops,Needed,P2,Tech,,,,GA4 / Plausible / Vercel Analytics
+Monitoring / uptime setup,Ops,Needed,P3,Tech,,,,
+Code review / PR workflow agreement,Ops,Needed,P3,Tech,,,,Chaadi asked what PR means — see reply for plain-language explanation
+Clean SVG of logomark (no wordmark),Design,Needed,P1,Graphics,,,,From the AI source files
+Clean SVG of wordmark (HELLO MEDIA),Design,Needed,P1,Graphics,,,,From the AI source files
+Clean SVG of brand symbols (Smile / Pixel / Wink / Pause / H),Design,Needed,P2,Graphics,,,,
+Font comparison sheet — paid vs free side by side,Design,Needed,P2,Graphics,,,,Include English + Arabic + price for paid versions
+Brand red hex + Pantone confirmation,Design,Needed,P3,Graphics,,,,Currently #E6062F — confirms with brand-guideline approval
+Image cropping + 'idea-preserving' rework guidance,Design,Needed,P1,Graphics,,,,Chaadi: not just crop; preserve the idea — use nano-banana when needed
+Hero variant: edge-to-edge image (no white frame) for sign-off,Design,Needed,P1,Web Dev,,,,Chaadi requested a screenshot test
+Page-by-page sign-off (clean / brand / fonts / spacing),Design,Needed,P1,Chaadi + Management,,,,Sit-down review meeting
+Slogan readability fix (red text size + clarity on hero),Design,Needed,P2,Web Dev + Graphics,,,,Chaadi flagged on hero
+Add social media icons in hero / nav,Design,Needed,P2,Web Dev,,,,Chaadi feedback
+Mock award images (Manag. with awards / events) for Awards page,Design,Needed,P2,Graphics,,,,Look like generic media / marketing awards
+Brochure design (PDF + web version),Design,Needed,P2,Graphics,,,,Chaadi asked — was missing from tracker
+Office address — UAE (HQ),Content,Needed,P1,Management,,,,
+Office addresses — UK / USA / Brazil / China / Egypt (luxury locations — mock OK for now),Content,Needed,P2,Web Dev + Management,,,,Use Sheikh Zayed Rd-equivalent in each city; placeholder OK
+Studio addresses — India / Pakistan,Content,Needed,P2,Management,,,,
+Phone numbers per country (real or mock),Content,Needed,P2,Management,,,,
+Contact email destination,Ops,Needed,P1,Management,,,,For form + footer
+"Client list — 30+ names from Management for Graphics to source logos",Content,Needed,P1,Management,,,,Chaadi: graphics will source / decide which we can use
+Client logos — sourcing + selection workflow,Content,Needed,P1,Graphics,,,,After Management provides names
+Approach for big-name client adds (low-cost),Content,Needed,P2,Management,,,,Chaadi suggested
+Case study 1 — full structure (Problem / Analysis / Solution / Result + photos / videos),Content,Needed,P1,Management + Graphics,,,,Chaadi: most important part
+Case study 2 — full structure,Content,Needed,P1,Management + Graphics,,,,
+Case study 3 — full structure,Content,Needed,P1,Management + Graphics,,,,
+Case study layout / template build,Engineering,To Do,P1,Web Dev,,,,Will build once first case study lands
+Team member: Mohammad Chadi Itani (LinkedIn provided),Content,Done,P1,Chaadi,,,Bio + photo TBC,https://www.linkedin.com/in/mohammadchadiitani/
+Team bios + photos — request LinkedIn URL from each member,Content,Needed,P1,Each team member,,,,Each person sends their own LinkedIn
+Awards list (titles / years / categories),Content,Needed,P2,Management,,,,Real awards if any; otherwise mock
+FAQ — 8 to 12 Q&A pairs,Content,Needed,P3,Management,,,,Chaadi: deferred — will add later via CMS
+Small-jobs offering — frame as one of our services,Content,Needed,P2,Management,,,,Chaadi: don't make agency look too big; show we do all sizes
+Hero subline sign-off,Content,Needed,P1,Management,,,,Three alternatives proposed in partner brief
+Nav decision — hide Whom-we-love / What-we-did until proof?,Content,Needed,P1,Management,,,,
+Final copywrite read-through,Content,Needed,P2,Chaadi,,,,Chaadi will do one final read once content is in
+Social account: Facebook,Marketing,Needed,P2,Marketing,,,,Use a single consistent name across all
+Social account: Instagram,Marketing,Needed,P2,Marketing,,,,
+Social account: Snapchat,Marketing,Needed,P2,Marketing,,,,
+Social account: X (Twitter),Marketing,Needed,P2,Marketing,,,,
+Social account: TikTok,Marketing,Needed,P2,Marketing,,,,
+Social account: YouTube,Marketing,Needed,P2,Marketing,,,,
+Social account: Pinterest,Marketing,Needed,P3,Marketing,,,,
+Social account: Flickr,Marketing,Needed,P3,Marketing,,,,
+Social account: LinkedIn — company page,Marketing,Needed,P1,Marketing,,,,
+Social account: LinkedIn — individual pages collected,Marketing,Needed,P2,Each team member,,,,Chaadi started: his URL provided
+Source privacy policy text from a media / marketing reference,Legal,Needed,P1,Management,,,,Chaadi suggestion: take + AI-modify for UAE laws
+Source T&C text from same reference,Legal,Needed,P1,Management,,,,
+Cookie statement text (link only — no popup),Legal,Needed,P2,Legal,,,,Chaadi: no GDPR popup — just a footer link
+Add 'no claim / sue' clause to T&C,Legal,Needed,P2,Legal,,,,Chaadi: entering site = agreement
+Copyright statement,Legal,Needed,P2,Legal,,,,
+Cookie consent banner — confirmed NOT NEEDED,Legal,Done,P2,Legal,,,Confirmed by Chaadi,No popup; link in T&C is enough
+Contact form on /where-we-are/,Engineering,To Do,P1,Web Dev,,,Form backend choice needed first,
+sitemap.xml,SEO,To Do,P2,Web Dev,,,Final domain needed,
+robots.txt,SEO,To Do,P2,Web Dev,,,,
+Schema.org JSON-LD (Organization + LocalBusiness),SEO,To Do,P2,Web Dev,,,Addresses + domain needed,
+manifest.webmanifest + PNG icons (180 / 192 / 512),Engineering,To Do,P3,Web Dev,,,,For iOS + Android home-screen
+Swap in licensed brand fonts,Design,To Do,P2,Web Dev,,,Font files needed,
+Replace stand-in logo with pixel-perfect vector,Design,To Do,P2,Web Dev,,,Clean SVG export needed,
+Populate client logos on Whom we love,Content,To Do,P1,Web Dev,,,Logos needed,
+Wire real addresses into map tooltips,Engineering,To Do,P1,Web Dev,,,Addresses needed,
+Country pages (UAE / UK / USA / Brazil / China / Egypt),Engineering,To Do,P2,Web Dev,,,Per-country content needed,Hero images already optimised
+Legal page: populate Privacy,Legal,To Do,P1,Web Dev,,,Text needed,
+Legal page: populate Terms,Legal,To Do,P1,Web Dev,,,Text needed,
+Legal page: populate Cookies,Legal,To Do,P2,Web Dev,,,Text needed,
+Legal page: populate Copyright,Legal,To Do,P2,Web Dev,,,Text needed,
+FAQ — populate Q&A,Content,To Do,P3,Web Dev,,,Q&A needed,Chaadi: deferred via CMS
+Team page — build layout + populate,Content,To Do,P1,Web Dev,,,Photos + bios needed,
+Awards page — populate,Content,To Do,P2,Web Dev,,,Awards list + mock images needed,
+Social media icons in footer,Content,To Do,P2,Web Dev,,,Active handles needed,
+Longer-form copy: E-Marketing service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Web Solutions service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Mobile App Dev service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: AI service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: SEO service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Web App service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Domain & Hosting service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Branding service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Creative & Printing service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Video Production service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Audio Production service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Copywriting service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: PR service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Photography & Media Buy page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Packaging service page,Content,To Do,P3,Web Dev,,,,
+Longer-form copy: Crisis Management service page,Content,To Do,P3,Web Dev,,,,
+CMS choice (decision needed before Phase 2),Engineering,To Do,P1,Tech + Management,,,,Chaadi mentioned 'CMS' multiple times — currently site is static; needs decision
+Arabic version / hreflang,Engineering,To Do,P3,Web Dev,,,Go / no-go from Management,Defer unless launch requires
