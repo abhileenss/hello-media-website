@@ -102,11 +102,10 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   transform: translateY(20px);
   transition: opacity 0.4s var(--pause), transform 0.7s var(--smile);
 }
-.intro-overlay.is-playing [data-part="pause-top"]   { transition-delay: 0.1s;  opacity: 1; transform: translateY(0); }
-.intro-overlay.is-playing [data-part="h-left"]      { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
-.intro-overlay.is-playing [data-part="h-right"]     { transition-delay: 0.35s; opacity: 1; transform: translateY(0); }
-.intro-overlay.is-playing [data-part="smile"]       { transition-delay: 0.55s; opacity: 1; transform: translateY(0); }
-.intro-overlay.is-playing [data-part="pixel"]       { transition-delay: 0.8s;  opacity: 1; transform: translateY(0); }
+.intro-overlay.is-playing [data-part="h-left"]      { transition-delay: 0.1s;  opacity: 1; transform: translateY(0); }
+.intro-overlay.is-playing [data-part="h-right"]     { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+.intro-overlay.is-playing [data-part="smile"]       { transition-delay: 0.45s; opacity: 1; transform: translateY(0); }
+.intro-overlay.is-playing [data-part="pixel"]       { transition-delay: 0.7s;  opacity: 1; transform: translateY(0); }
 
 /* =============================================
    NAVIGATION
