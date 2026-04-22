@@ -3,9 +3,11 @@ Brand CSS tokens (colors / fonts / motion),Design,Done,Claude,P1,,"Black / white
 Animated logo SVG with intro overlay,Design,Done,Claude,P1,,Five animatable parts (pause / H-left / H-right / smile / pixel); plays once per session
 Image-dominant hero layout,Design,Done,Claude,P1,,Fixes Chaadi's half-image feedback — full-bleed image with text panel bottom-left
 Page header + block layout components,Design,Done,Claude,P1,,Shared across 43 pages
-Mobile nav with hamburger,Design,Done,Claude,P2,,Collapses under 860px
+Mobile nav with hamburger,Design,Done,Claude,P2,,"Collapses under 860px; iOS bleed fix shipped in commit 8639fc5"
 Scroll reveal with motion language,Design,Done,Claude,P2,,Honours prefers-reduced-motion
 Accessibility focus styles,Design,Done,Claude,P2,,Keyboard focus-visible outline in brand red
+iOS 100vh / 100svh fix on hero,Engineering,Done,Claude,P1,,Progressive enhancement so Safari's dynamic toolbar doesn't push content
+Full responsive audit (phone / tablet / desktop),Design,Done,Claude,P1,,"Breakpoints at 400 / 600 / 860 px with per-breakpoint tuning"
 Optimise 49 hero images (WebP + JPG),Engineering,Done,Claude,P1,,852 MB source → 24.5 MB output
 Python page generator (scripts/build_pages.py),Engineering,Done,Claude,P1,,Shared nav / footer / logo template
 Interactive world map with pin tooltips,Engineering,Done,Claude,P1,,6 hubs pulsing + 2 studios grey
