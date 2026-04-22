@@ -1,0 +1,62 @@
+Task,Area,Status,Owner,Priority,Blocker,Notes
+Brand CSS tokens (colors / fonts / motion),Design,Done,Claude,P1,,"#000 / #fff / #E6062F; Archivo Black + Barlow Condensed + Inter; pause/smile/wink easings"
+Animated logo SVG with intro overlay,Design,Done,Claude,P1,,Five animatable parts; plays once per session
+Image-dominant hero layout (70/30),Design,Done,Claude,P1,,Fixes Chaadi's half-image feedback
+Optimise 49 hero images to WebP + JPG,Engineering,Done,Claude,P1,,852 MB source → 24.5 MB
+Build 43 pages via Python generator,Engineering,Done,Claude,P1,,scripts/build_pages.py
+Interactive world map with pin tooltips,Engineering,Done,Claude,P1,,6 hubs + 2 studios
+Branded 404 page,Engineering,Done,Claude,P2,,404.html at repo root
+Favicon SVG,Engineering,Done,Claude,P2,,
+OpenGraph / Twitter meta,SEO,Done,Claude,P2,,Per-page og:title / og:description / og:image
+Security headers via vercel.json,Security,Done,Claude,P2,,CSP / HSTS / X-Frame-Options / Referrer-Policy / Permissions-Policy
+Alt text on all images,Accessibility,Done,Claude,P2,,
+Skip-to-content link + focus styles,Accessibility,Done,Claude,P2,,
+Reveal-flash bug fix (blank viewport),Engineering,Done,Claude,P1,,html.js-ready gating + relaxed IntersectionObserver threshold
+Differentiated stub copy per page,Content,Done,Claude,P2,,Stops footer looking copy-pasted
+Contact form on /where-we-are/,Engineering,To Do,Claude,P1,Form backend + destination email,Currently coming-soon block
+sitemap.xml + robots.txt,SEO,To Do,Claude,P2,Final domain,
+Analytics snippet,Engineering,To Do,Claude,P2,Provider choice,GA4 / Plausible / Vercel
+Swap in licensed brand fonts,Design,To Do,Claude,P2,Font files from Chaadi,Currently using closest-free substitutes
+Replace stand-in logo with pixel-perfect vector,Design,To Do,Claude,P2,Clean SVG export of Logo.ai,
+Populate client logos on Whom we love,Content,To Do,Claude,P1,Client logo files,Blocks primary nav unlocking
+Build case study template + 3–5 stories,Content,To Do,Claude,P1,Case study content,Blocks primary nav unlocking
+Real map pin addresses,Content,To Do,Claude,P1,Per-country office addresses,Currently mock tooltips
+Legal copy: privacy,Legal,To Do,Legal,P1,,Currently placeholder
+Legal copy: terms,Legal,To Do,Legal,P1,,Currently placeholder
+Legal copy: cookies,Legal,To Do,Legal,P1,,Currently placeholder
+Legal copy: copyright,Legal,To Do,Legal,P2,,Currently placeholder
+FAQ content,Content,To Do,Client,P2,8–12 Q&A pairs,
+Team page: photos + bios,Content,To Do,Client,P1,Photo + name + title + bio per person,
+Awards page content,Content,To Do,Client,P2,Verified awards list,
+Social media icons in footer,Content,To Do,Client,P2,Active handles,
+Arabic version / hreflang,Engineering,To Do,Claude,P3,Go / no-go from client,Defer unless needed at launch
+Cookie consent banner,Legal,To Do,Legal,P2,GDPR / PDPL confirmation,
+Clean SVG of logomark + wordmark,Design,Needed,Chaadi,P1,,Separate files requested
+Font licence decision,Design,Needed,Chaadi,P2,,Geometr415 + EngraversGothic OR approve substitutes
+Brand red confirmation,Design,Needed,Chaadi,P3,,Confirm #E6062F / Pantone
+Sign-off on hero layout + motion,Design,Needed,Chaadi,P1,,Confirm before public launch
+Image crop guidance,Design,Needed,Chaadi,P3,,Focal points for 16:8 hero crop
+Final domain,Ops,Needed,Client,P1,,Probably hellomedia.ae
+Contact email destination,Ops,Needed,Client,P1,,Form + footer
+Phone numbers per country,Content,Needed,Client,P2,,
+Real office addresses,Content,Needed,Client,P1,,UAE (HQ) + 5 hubs + 2 studios
+Client logos,Content,Needed,Client,P1,,For Whom we love
+Case studies (3–5),Content,Needed,Client,P1,,Title + hero + copy + outcomes
+Team photos + bios,Content,Needed,Client,P1,,
+Awards list,Content,Needed,Client,P2,,
+FAQ content,Content,Needed,Client,P2,,
+Small-jobs offering,Content,Needed,Client,P2,,What's included + pricing + turnaround
+Social handles,Content,Needed,Client,P2,,
+Hero subline sign-off,Content,Needed,Client,P1,,Three alternatives proposed in brief
+Nav decision for Whom-we-love / What-we-did,Content,Needed,Client,P1,,Hide from nav until content ships?
+Brand intro video (optional),Content,Needed,Client,P3,,
+Privacy policy text,Legal,Needed,Legal,P1,,
+Terms & conditions text,Legal,Needed,Legal,P1,,
+Cookie statement text,Legal,Needed,Legal,P2,,
+Copyright statement,Legal,Needed,Legal,P2,,
+Cookie consent banner requirement,Legal,Needed,Legal,P2,,GDPR / UAE PDPL
+Disable Vercel Deploy Protection,Ops,Needed,Ops,P1,,Blocks end-to-end deploy verification
+Analytics provider choice,Ops,Needed,Ops,P2,,GA4 / Plausible / Vercel
+Form backend choice,Ops,Needed,Ops,P1,,Formspree / Resend / Vercel Forms / SMTP
+DNS pointing to Vercel,Ops,Needed,Ops,P1,,Once domain confirmed
+PR workflow confirmation,Ops,Needed,Ops,P3,,Feature branch → PR → review → merge
