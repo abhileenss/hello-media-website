@@ -203,17 +203,37 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
-    padding: 1rem var(--gutter) 2rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s var(--pause);
+    padding: 0 var(--gutter);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s var(--ease),
+                transform 0.25s var(--ease),
+                visibility 0s linear 0.25s;
+    max-height: calc(100dvh - var(--nav-h));
+    overflow-y: auto;
   }
-  .nav__links.is-open { max-height: 70vh; }
+  .nav__links.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    padding: 0.75rem var(--gutter) 1.5rem;
+    transition: opacity 0.25s var(--ease),
+                transform 0.25s var(--ease),
+                visibility 0s linear 0s,
+                padding 0.25s var(--ease);
+  }
   .nav__link {
     width: 100%;
     padding: 1rem 0;
     font-size: 1rem;
     border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav__links:not(.is-open) .nav__link {
+    padding: 0;
+    border-bottom: 0;
+    font-size: 0;
+    line-height: 0;
   }
 }
 
@@ -236,6 +256,7 @@ main { padding-top: var(--nav-h); }
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   min-height: calc(100vh - var(--nav-h));
+  min-height: calc(100svh - var(--nav-h));
   background: var(--black);
   color: var(--white);
   overflow: hidden;
@@ -244,6 +265,7 @@ main { padding-top: var(--nav-h); }
   position: relative;
   width: 100%;
   height: calc(100vh - var(--nav-h));
+  height: calc(100svh - var(--nav-h));
   overflow: hidden;
 }
 .hero__media img {
@@ -263,9 +285,13 @@ main { padding-top: var(--nav-h); }
 .hero__panel {
   position: absolute;
   left: var(--gutter);
+  right: var(--gutter);
   bottom: clamp(3rem, 8vw, 6rem);
-  max-width: min(520px, 45vw);
+  max-width: 520px;
   z-index: 2;
+}
+@media (min-width: 860px) {
+  .hero__panel { right: auto; max-width: min(520px, 50vw); }
 }
 .hero__eyebrow {
   display: inline-flex;
@@ -835,4 +861,103 @@ html.js-ready [data-reveal].is-in {
   position: absolute; width: 1px; height: 1px;
   padding: 0; margin: -1px; overflow: hidden;
   clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* =============================================
+   RESPONSIVE — tablet (<=860px) and phone (<=600px)
+   ============================================= */
+@media (max-width: 860px) {
+  :root { --nav-h: 64px; }
+  .nav__brand svg { width: 36px; height: 36px; }
+  .nav__brand-text { font-size: 0.8rem; }
+
+  /* Content block: stack with image on top */
+  .block {
+    grid-template-columns: 1fr;
+    padding: clamp(1.5rem, 6vw, 3rem) var(--gutter);
+  }
+  .block__media { aspect-ratio: 16 / 11; }
+  .block__body { max-width: 100%; }
+
+  /* Page hero image goes closer to edges on mobile */
+  .page-hero-image { padding: 0; }
+  .page-hero-image::after { right: 20px; }
+  .page-hero-image img { aspect-ratio: 4 / 3; }
+
+  /* Map: legend stacks below the map */
+  .map-wrap { gap: 1.25rem; }
+  .map-stage { aspect-ratio: 4 / 3; }
+
+  /* Footer columns tighten */
+  .footer__grid { gap: 1.5rem; }
+  .footer__bottom { flex-direction: column; align-items: flex-start; }
+
+  /* Service card grid: slightly larger minimum */
+  .grid-services { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+
+  /* Clients grid: 2-up on mobile */
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  :root { --gutter: 1.25rem; }
+
+  /* Hero: text full-width, smaller title */
+  .hero__panel { bottom: clamp(2rem, 6vw, 4rem); }
+  .hero__title { font-size: clamp(2.1rem, 9vw, 3.2rem); }
+  .hero__sub { font-size: 0.82rem; }
+  .hero__scroll { bottom: 14px; font-size: 0.65rem; }
+  .hero__scroll::after { height: 28px; }
+
+  /* Page header title: tighter */
+  .page-header h1 { font-size: clamp(2rem, 9vw, 3rem); }
+  .page-header .lead { font-size: 0.9rem; }
+
+  /* Block typography: tighter */
+  .block__title { font-size: clamp(1.4rem, 6.5vw, 1.9rem); }
+  .block__body { font-size: 0.88rem; }
+
+  /* Service card text scales with viewport */
+  .service-card { aspect-ratio: 5 / 6; }
+  .service-card__body { padding: 1.1rem; }
+  .service-card__title { font-size: clamp(1.1rem, 5vw, 1.35rem); }
+  .service-card__sub { font-size: 0.7rem; }
+
+  /* Clients grid: 2-up still but smaller cells */
+  .client-cell { font-size: 0.72rem; }
+
+  /* Footer: single column */
+  .footer__grid { grid-template-columns: 1fr; }
+
+  /* Coming-soon sections tighten */
+  .coming-soon { padding: clamp(2rem, 10vw, 5rem) var(--gutter); }
+  .coming-soon h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+  .coming-soon p { font-size: 0.9rem; }
+
+  /* Map tooltip repositions + smaller */
+  .map-tooltip { min-width: 140px; padding: 10px 12px; font-size: 0.72rem; }
+  .map-tooltip strong { font-size: 0.85rem; }
+
+  /* Map legend: tighter */
+  .map-legend { padding: 1.25rem; }
+  .map-legend ul li { padding: 0.35rem 0; font-size: 0.75rem; }
+}
+
+@media (max-width: 400px) {
+  .hero__title { font-size: 1.9rem; line-height: 1; }
+  .hero__sub { font-size: 0.78rem; }
+  .hero__eyebrow { font-size: 0.62rem; letter-spacing: 0.2em; }
+  .nav__brand-text { display: none; }
+  .grid-services { grid-template-columns: 1fr; }
+  .clients-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Honour user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
