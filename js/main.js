@@ -10,6 +10,16 @@
   // stays visible for no-JS / script-blocked users.
   document.documentElement.classList.add('js-ready');
 
+  // ───── Hero A/B variant (?hero=edge on index) ──
+  // Runs before layout settles so the user never sees the default
+  // hero flash when they asked for the edge variant.
+  try {
+    const params = new URLSearchParams(location.search);
+    if (params.get('hero') === 'edge') {
+      document.body.classList.add('hero-edge');
+    }
+  } catch (_) { /* old browser — fine to skip */ }
+
   // ───── Intro overlay ───────────────────────────
   const intro = document.querySelector('.intro-overlay');
   if (intro) {

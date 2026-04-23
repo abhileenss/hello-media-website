@@ -112,6 +112,25 @@ Chaadi sent point-by-point feedback. Actions taken:
 
 Commits: `6bcca46`, `72898c8`, (this commit).
 
+### Session 5 — April 22 2026 (unblocked engineering sweep)
+
+Worked through the ten items in `NEXT-SESSION-PROMPT.md` — everything that didn't need partner input. Pure scaffolding, no content decisions.
+
+- **Hero A/B**: `?hero=edge` variant live on `/`. Nav goes transparent, `.hero__media` fills 100svh, top-edge darkening ramp keeps nav legible. Documented in `docs/HERO-VARIANTS.md`. Default hero unchanged.
+- **Slogan readability**: bumped eyebrow weight 500→700, size 0.7rem→0.95rem, tightened letter-spacing, added text-shadow + drop-shadow on the red square. Separate mobile rule at ≤600px.
+- **Social icons**: 9-icon inline-SVG row (FB / IG / Snap / X / TikTok / YT / Pinterest / Flickr / LinkedIn) in footer above `.footer__bottom`. 34×34 px wrapper, 20 px icon, red hover, proper `aria-label` per icon. Handles are `#` until Marketing provides URLs.
+- **Cookie + terms**: footer "Cookies" renamed "Cookie statement". Terms stub now carries the "by using this site you agree … have no claim" clause per Chaadi. No popup added — confirmed unwanted.
+- **Case study template**: new `.case-hero` + `.case-section` + `.case-card` components; `/what-we-did/sample/` seeded as placeholder; hub now lists cards via `CASE_STUDIES` list (auto-switches to grid when >1 entry).
+- **sitemap.xml + robots.txt**: sitemap auto-generated at build (50 URLs) with placeholder canonical `https://hellomedia.site/`. `robots.txt` allows all, blocks `/motion-preview/`, references sitemap.
+- **Web manifest + PNG icons**: 180/192/512 PNGs generated from `favicon.svg` via cairosvg, stored in `/assets/icons/`. `manifest.webmanifest` + `apple-touch-icon` now wired into every page shell.
+- **Country pages**: 6 pages scaffolded at `/where-we-are/<uae|uk|usa|brazil|china|egypt>/`. Each: country hero image (`contact-<country>.jpg`), "Indicative location" address, placeholder phone, back link to the world map. Map pins now link to these pages via a "Visit →" link in the tooltip (tooltip gains pointer-events and a grace-timer hide so the link is clickable).
+- **Motion preview**: new `/motion-preview/` page (not in nav, `noindex,nofollow`, excluded from sitemap + robots). Showcases Pause / Smile / Wink / Pixel / Reveal primitives and an "Replay intro" button that clears sessionStorage.
+- **Image focal points**: `FOCAL_POINTS` dict in `scripts/build_pages.py`, applied inline as `object-position: X Y` on every hero, block, service-card and page-header image. Defaults to `center` when a slug is missing.
+
+Local crawl: 44 pages, 92 assets, 0 broken. Served with `python3 -m http.server 8765`.
+
+Commits: this commit.
+
 ---
 
 ## Open questions (needing a decision, blocking Phase 2)
