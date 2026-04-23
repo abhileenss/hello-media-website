@@ -94,19 +94,18 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   visibility: hidden;
 }
 .intro-logo {
-  width: min(36vw, 300px);
-  aspect-ratio: 1 / 1;
+  width: min(42vw, 360px);
+  aspect-ratio: 219.79 / 165.19;
 }
 .intro-logo [data-part] {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.4s var(--pause), transform 0.7s var(--smile);
 }
-.intro-overlay.is-playing [data-part="pause-top"]   { transition-delay: 0.1s;  opacity: 1; transform: translateY(0); }
-.intro-overlay.is-playing [data-part="h-left"]      { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
-.intro-overlay.is-playing [data-part="h-right"]     { transition-delay: 0.35s; opacity: 1; transform: translateY(0); }
-.intro-overlay.is-playing [data-part="smile"]       { transition-delay: 0.55s; opacity: 1; transform: translateY(0); }
-.intro-overlay.is-playing [data-part="pixel"]       { transition-delay: 0.8s;  opacity: 1; transform: translateY(0); }
+.intro-overlay.is-playing [data-part="h-left"]      { transition-delay: 0.1s;  opacity: 1; transform: translateY(0); }
+.intro-overlay.is-playing [data-part="h-right"]     { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+.intro-overlay.is-playing [data-part="smile"]       { transition-delay: 0.45s; opacity: 1; transform: translateY(0); }
+.intro-overlay.is-playing [data-part="pixel"]       { transition-delay: 0.7s;  opacity: 1; transform: translateY(0); }
 
 /* =============================================
    NAVIGATION
@@ -137,7 +136,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   gap: 10px;
   color: var(--white);
 }
-.nav__brand svg { width: 42px; height: 42px; }
+.nav__brand svg { width: 50px; height: auto; display: block; }
 .nav__brand-text {
   font-family: var(--font-display);
   font-weight: 900;
@@ -874,7 +873,7 @@ html.js-ready [data-reveal].is-in {
    ============================================= */
 @media (max-width: 860px) {
   :root { --nav-h: 64px; }
-  .nav__brand svg { width: 36px; height: 36px; }
+  .nav__brand svg { width: 44px; height: auto; }
   .nav__brand-text { font-size: 0.8rem; }
 
   /* Content block: stack with image on top */
